@@ -80,12 +80,13 @@ const DeliverSection = () => {
         {/* CTA Buttons */}
         <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href=""
+            href="https://drive.google.com/uc?export=download&id=1DAadxW1LFw2iMa8znOPy5-djTGDWiaav"
             download
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-sm font-medium flex items-center gap-2"
           >
             <FiDownload /> Download Resume
           </a>
+
           <a
             href="https://www.linkedin.com/in/ayush-poojari/"
             target="_blank"

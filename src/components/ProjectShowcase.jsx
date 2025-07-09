@@ -9,8 +9,8 @@ const projects = [
     description:
       "A privacy-preserving AI assistant that automates everyday web tasks such as ticket booking, form filling, and product search. Built using GPT-4o, Electron, and Playwright, it interprets user prompts, extracts DOM structure, and takes intelligent actions. The agent runs locally, ensuring no sensitive data is shared externally. Modular MCP-based design allows dynamic tool invocation and action planning. Ideal for repetitive workflows and productivity automation.",
     image: "/projects/project-1.png",
-    caseStudy: "https://github.com/AyushPoojari/ai-browser-agent",
-    website: "https://github.com/AyushPoojari/ai-browser-agent",
+    caseStudy: "https://github.com/AyushPoojariUCD/ai-browser-agent",
+    website: "https://github.com/AyushPoojariUCD/ai-browser-agent",
   },
   {
     title: "ItsAFeatureNotABug - HR Sync Platform",
@@ -34,8 +34,8 @@ const projects = [
     description:
       "A sleek and responsive personal portfolio built using React, Tailwind CSS, and deployed on Netlify. It showcases projects, technical skills, and work experience with animations and typing effects. Implements reusable components, dark mode, and mobile-first design principles. The project demonstrates frontend proficiency and design aesthetics with clean UI/UX. Integrated with GitHub for continuous deployment.",
     image: "/projects/project-4.png",
-    caseStudy: "https://github.com/AyushPoojari/portfolio-website",
-    website: "https://github.com/AyushPoojari/portfolio-website",
+    caseStudy: "https://github.com/AyushPoojariUCD/portfolio",
+    website: "https://github.com/AyushPoojariUCD/portfolio",
   },
 ];
 
@@ -133,7 +133,9 @@ const ProjectShowcase = () => {
       {/* View All Projects */}
       <div className="text-center mt-12">
         <a
-          href="/projects"
+          href="https://github.com/AyushPoojariUCD?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-blue-500 text-white px-6 py-3 rounded-md text-sm hover:bg-blue-600 inline-flex items-center gap-2"
         >
           View All Projects <FaArrowRight />
