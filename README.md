@@ -1,12 +1,50 @@
-# React + Vite
+# 🌐 Ayush Poojari — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website built using **React**, **Tailwind CSS**, and **Framer Motion**. It showcases my projects, skills, and technical experience in a clean, modern interface.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ React
+- 💨 Tailwind CSS
+- 🎞️ Framer Motion
+- 🖼️ React Icons & Iconify
+- 🌐 Netlify / GitHub Pages (for deployment)
 
-## Expanding the ESLint configuration
+## 📁 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📌 Dynamic project showcase with animated carousel
+- 🧠 Skills section highlighting technologies and tools
+- 🖼️ Responsive design for all screen sizes
+- 🎨 Dark/light theme compatible
+- ⚡ Fast build and optimized assets
+
+## 🧪 Projects Included
+
+- **AI Browser Agent**  
+  Privacy-focused browser automation agent using OpenAI, Playwright, and Electron.
+
+- **ItsAFeatureNotABug - HR Sync Platform**  
+  Microservices-based HR sync system with Flask, Kafka, MongoDB, Elasticsearch, Docker, K8s + HPA.
+
+- **Traffic Sign Classification**  
+  Deep learning classifier for GTSRB dataset using CNN.
+
+- **This Portfolio Website**  
+  Responsive and animated personal portfolio using React and Tailwind.
+
+## 📦 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/AyushPoojariUCD/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+
+# Build for production
+npm run build
+```
