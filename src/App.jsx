@@ -5,6 +5,7 @@ import WorkExperience from "./components/WorkExperience";
 import TechStack from "./components/TechStack";
 import ProjectShowcase from "./components/ProjectShowcase";
 import DeliverSection from "./components/DeliverSection";
+import Chatbot from "./components/Chatbot";
 import Footer from "./components/Footer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <TechStack />
       <ProjectShowcase />
       <DeliverSection />
+      <Chatbot />
       <Footer />
     </div>
   );
