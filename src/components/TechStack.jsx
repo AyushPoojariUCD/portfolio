@@ -15,40 +15,8 @@ const techIcons = [
   { name: "Redis", icon: "logos:redis" },
 ];
 
-const techSkills = [
-  {
-    title: "Languages",
-    items: ["Java", "Python", "R", "C", "C++", "C#", ".NET", "Golang", "Rust"],
-  },
-  {
-    title: "Cloud & Microservices",
-    items: ["Java Spring Boot", "AWS", "GCP", "Microsoft Azure"],
-  },
-  {
-    title: "Data & BI Tools",
-    items: ["Power BI", "Tableau", "Looker", "Databricks", "Snowflake"],
-  },
-  {
-    title: "Machine Learning",
-    items: ["TensorFlow", "Generative AI (Transformers, LLMs)", "Scikit-learn"],
-  },
-  {
-    title: "DevOps & Big Data",
-    items: ["Docker", "Kubernetes", "Apache Hadoop", "Apache Kafka"],
-  },
-  {
-    title: "Databases",
-    items: ["MySQL", "PostgreSQL", "MongoDB"],
-  },
-  {
-    title: "Certifications",
-    items: [
-      "AWS Certified Solutions Architect",
-      "GCP Associate Cloud Engineer",
-      "Microsoft Azure Fundamentals",
-    ],
-  },
-];
+// Duplicate icons for seamless infinite loop
+const duplicatedIcons = [...techIcons, ...techIcons];
 
 const TechStack = () => {
   return (
@@ -62,13 +30,13 @@ const TechStack = () => {
         </p>
       </div>
 
-      {/* Scrolling icons */}
-      <div className="overflow-hidden mb-16">
-        <div className="flex gap-12 animate-marquee whitespace-nowrap px-4">
-          {techIcons.map((tech, index) => (
+      {/* Smooth Infinite Scrolling Icons */}
+      <div className="relative overflow-hidden mb-16">
+        <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
+          {duplicatedIcons.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-col items-center min-w-[100px] hover:scale-110 transition-transform duration-300"
+              className="flex flex-col items-center min-w-[100px] hover:scale-110 transition-transform duration-600"
             >
               <div className="bg-[#1a1a1a] p-4 rounded-xl shadow-md">
                 <Icon icon={tech.icon} width={32} height={32} />

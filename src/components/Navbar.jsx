@@ -12,18 +12,9 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center gap-2 text-xl font-bold">
           <FaCode className="text-blue-400" />
-          <TypeAnimation
-            sequence={[
-              "AYUSH POOJARI", // text to type
-              2000, // wait 2s
-              "", // clear
-            ]}
-            wrapper="span"
-            cursor={true}
-            speed={20}
-            repeat={Infinity} // or 0 for once
-            className="text-inherit"
-          />
+          <h1 className="hover:text-blue-600 dark:hover:text-blue-400 transition">
+            Ayush Poojari
+          </h1>
         </div>
 
         {/* Navigation links */}
