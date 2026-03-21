@@ -128,7 +128,7 @@ const Hero = () => {
           className="relative"
         >
           <img
-            src="/profile.png"
+            src="/profile.gif"
             alt="Profile"
             className="w-[320px] md:w-[400px] rounded-xl shadow-lg"
           />
