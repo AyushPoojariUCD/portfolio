@@ -14,9 +14,8 @@ function App() {
       <Navbar />
       <Hero />
       <WorkExperience />
-      <OrbitBanner />
-      <TechStack />
       <ProjectShowcase />
+      <TechStack />
       <DeliverSection />
       <Chatbot />
       <Footer />

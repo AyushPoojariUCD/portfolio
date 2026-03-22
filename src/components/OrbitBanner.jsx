@@ -45,8 +45,7 @@ const Orbit = ({ items, radius, duration, reverse }) => {
         animation: `${reverse ? "spin-reverse" : "spin"} ${duration}s linear infinite`,
       }}
     >
-      {/* Orbit Ring */}
-      <div className="absolute inset-0 rounded-full border border-dashed border-blue-400/30 dark:border-blue-500/20"></div>
+      <div className="absolute inset-0 rounded-full border border-dashed border-blue-400/30"></div>
 
       {items.map((src, i) => {
         const angle = (i / items.length) * 2 * Math.PI;
@@ -63,14 +62,8 @@ const Orbit = ({ items, radius, duration, reverse }) => {
               transform: "translate(-50%, -50%)",
             }}
           >
-            {/* ICON BUBBLE (FIXED) */}
-            <div className="bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-gray-700 rounded-full p-3 shadow-md flex items-center justify-center transition hover:scale-110 hover:shadow-blue-500/50">
-              <img
-                src={src}
-                alt=""
-                className="w-8 h-8 object-contain"
-                onError={(e) => (e.target.style.display = "none")}
-              />
+            <div className="bg-white dark:bg-[#0f172a] border border-gray-200 dark:border-gray-700 rounded-full p-3 shadow-md flex items-center justify-center hover:scale-110 transition">
+              <img src={src} className="w-7 h-7 object-contain" />
             </div>
           </div>
         );
@@ -85,23 +78,22 @@ const Orbit = ({ items, radius, duration, reverse }) => {
 
 const OrbitBanner = () => {
   return (
-    <div className="relative flex items-center justify-center h-screen overflow-hidden bg-gray-100 dark:bg-[#020617]">
-      {/* Background Glow */}
-      <div className="absolute w-[650px] h-[650px] rounded-full bg-blue-200/30 dark:bg-blue-900/20 blur-3xl"></div>
+    <div className="relative flex items-center justify-center w-[350px] sm:w-[450px] md:w-[550px] lg:w-[650px] aspect-square">
+      {/* Glow */}
+      <div className="absolute w-full h-full rounded-full bg-blue-500/10 blur-3xl"></div>
 
       {/* Center Image */}
-      <div className="relative z-10 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-110">
+      <div className="relative z-10 hover:scale-110 transition duration-500">
         <img
           src="/orbit-profile-banner.png"
-          alt="profile"
-          className="w-[260px] md:w-[280px]"
+          className="w-[160px] sm:w-[200px] md:w-[240px]"
         />
       </div>
 
       {/* Orbits */}
-      <Orbit items={orbit1} radius={160} duration={18} />
-      <Orbit items={orbit2} radius={240} duration={28} reverse />
-      <Orbit items={orbit3} radius={320} duration={38} />
+      <Orbit items={orbit1} radius={90} duration={18} />
+      <Orbit items={orbit2} radius={140} duration={28} reverse />
+      <Orbit items={orbit3} radius={190} duration={38} />
     </div>
   );
 };

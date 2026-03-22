@@ -1,49 +1,54 @@
 import React from "react";
+import OrbitBanner from "./OrbitBanner";
 import { Icon } from "@iconify/react";
 
-const techIcons = [
+const techHighlights = [
   { name: "React", icon: "logos:react" },
   { name: "Node.js", icon: "logos:nodejs-icon" },
-  { name: "Next.js", icon: "logos:nextjs-icon" },
-  { name: "Tailwind CSS", icon: "logos:tailwindcss-icon" },
-  { name: "PostgreSQL", icon: "logos:postgresql" },
-  { name: "MongoDB", icon: "logos:mongodb-icon" },
-  { name: "AWS", icon: "logos:aws" },
   { name: "Docker", icon: "logos:docker-icon" },
-  { name: "GraphQL", icon: "logos:graphql" },
-  { name: "Figma", icon: "logos:figma" },
-  { name: "Redis", icon: "logos:redis" },
+  { name: "Kubernetes", icon: "logos:kubernetes" },
+  { name: "AWS", icon: "logos:aws" },
+  { name: "TensorFlow", icon: "logos:tensorflow" },
 ];
-
-// Duplicate icons for seamless infinite loop
-const duplicatedIcons = [...techIcons, ...techIcons];
 
 const TechStack = () => {
   return (
-    <section className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white py-16 px-4">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">
-          Technologies I Work With
-        </h2>
-        <p className="text-blue-400 text-sm">
-          Modern tools for modern solutions
-        </p>
-      </div>
+    <section className="relative bg-gradient-to-br from-[#020617] via-[#0f172a] to-[#020617] text-white py-24 px-6 overflow-hidden">
+      {/* Glow */}
+      <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-blue-500/10 blur-3xl rounded-full"></div>
 
-      {/* Smooth Infinite Scrolling Icons */}
-      <div className="relative overflow-hidden mb-16">
-        <div className="flex gap-12 whitespace-nowrap animate-marquee w-max">
-          {duplicatedIcons.map((tech, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center min-w-[100px] hover:scale-110 transition-transform duration-600"
-            >
-              <div className="bg-[#1a1a1a] p-4 rounded-xl shadow-md">
-                <Icon icon={tech.icon} width={32} height={32} />
+      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* LEFT */}
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            My <span className="text-blue-400">Tech Ecosystem</span>
+          </h2>
+
+          <p className="text-gray-400 mb-6 max-w-lg">
+            Building scalable systems using modern technologies across
+            full-stack, DevOps, and AI.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {techHighlights.map((tech, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-3 rounded-xl hover:bg-white/10 transition"
+              >
+                <Icon icon={tech.icon} width={20} />
+                <span className="text-sm">{tech.name}</span>
               </div>
-              <p className="mt-2 text-xs text-center">{tech.name}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <button className="mt-6 px-6 py-3 bg-blue-500 rounded-lg hover:bg-blue-600">
+            Explore →
+          </button>
+        </div>
+
+        {/* RIGHT */}
+        <div className="flex justify-center">
+          <OrbitBanner />
         </div>
       </div>
     </section>
