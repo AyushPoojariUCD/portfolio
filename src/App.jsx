@@ -1,6 +1,6 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import OrbitBanner from "./components/OrbitBanner";
 import WorkExperience from "./components/WorkExperience";
 import TechStack from "./components/TechStack";
 import ProjectShowcase from "./components/ProjectShowcase";
@@ -14,6 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <WorkExperience />
+      <OrbitBanner />
       <TechStack />
       <ProjectShowcase />
       <DeliverSection />

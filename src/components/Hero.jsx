@@ -1,4 +1,5 @@
 import React from "react";
+import OrbitBanner from "./OrbitBanner";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaLinkedin, FaGoogle, FaGithub } from "react-icons/fa";
 import { MdOutlineDesignServices } from "react-icons/md";
