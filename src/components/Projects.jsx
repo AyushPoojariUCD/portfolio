@@ -71,12 +71,12 @@ const Projects = () => {
               onClick={() => setActive(i)}
               className={`flex items-center gap-2 px-4 py-2 text-sm rounded-lg border transition-all ${
                 active === i
-                  ? "text-white"
+                  ? "text-black dark:text-white font-semibold shadow-sm"
                   : "text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
               }`}
               style={{
                 borderColor: active === i ? tab.color : "rgba(0,0,0,0.1)",
-                background: active === i ? `${tab.color}20` : "transparent",
+                background: active === i ? `${tab.color}30` : "transparent",
               }}
             >
               <Icon icon={tab.icon} />
@@ -118,7 +118,7 @@ const Projects = () => {
               className="rounded-xl shadow-xl w-full object-cover"
             />
 
-            {/* Glow */}
+            {/* Glow Effect */}
             <div
               className="absolute bottom-0 right-0 w-40 h-40 blur-[120px] rounded-full opacity-40"
               style={{ background: current.color }}
