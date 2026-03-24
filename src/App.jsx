@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import OrbitBanner from "./components/OrbitBanner";
 import WorkExperience from "./components/WorkExperience";
 import TechStack from "./components/TechStack";
-import ProjectShowcase from "./components/ProjectShowcase";
+import Project from "./components/Projects";
 import DeliverSection from "./components/DeliverSection";
 import Chatbot from "./components/Chatbot";
 import Footer from "./components/Footer";
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <WorkExperience />
-      <ProjectShowcase />
+      <Project />
       <TechStack />
       <DeliverSection />
       <Chatbot />
