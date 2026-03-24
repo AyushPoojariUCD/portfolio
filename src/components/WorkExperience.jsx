@@ -46,36 +46,72 @@ const experiences = [
 
 const WorkExperience = () => {
   return (
-    <section className="bg-black text-white py-16 px-6" id="work">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">
+    <section className="relative bg-gradient-to-b from-[#020617] to-[#0f172a] text-white py-16 sm:py-20 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16">
           Work Experience
         </h2>
-        <div className="relative border-l border-gray-700 pl-6">
-          {experiences.map((exp, index) => (
-            <div key={index} className="mb-12 relative">
-              {/* Timeline Dot */}
-              <div className="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center shadow-lg">
-                <FaBriefcase className="text-white text-xs" />
-              </div>
 
-              {/* Content Box */}
-              <div className="bg-[#1a1a1a] p-6 rounded-md shadow-md">
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-                  <h3 className="text-lg font-semibold">{exp.role}</h3>
-                  <span className="text-sm text-gray-400">{exp.period}</span>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Line → left on mobile, center on desktop */}
+          <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-blue-500 to-indigo-600 md:-translate-x-1/2"></div>
+
+          <div className="space-y-12 sm:space-y-16">
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+
+              return (
+                <div key={index} className="relative flex">
+                  {/* Dot */}
+                  <div className="absolute left-4 md:left-1/2 w-8 h-8 md:w-10 md:h-10 transform md:-translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30 z-10">
+                    <FaBriefcase className="text-white text-xs md:text-sm" />
+                  </div>
+
+                  {/* Card */}
+                  <div
+                    className={`group w-full md:w-[45%] ml-12 md:ml-0 p-5 sm:p-6 rounded-2xl border border-white/10 backdrop-blur-lg bg-white/5 
+                    shadow-xl transition-all duration-300 
+                    hover:scale-[1.02] hover:shadow-blue-500/20 
+                    hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-indigo-600/20 
+                    hover:border-blue-400/40
+                    ${isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"}`}
+                  >
+                    {/* Header */}
+                    <div className="mb-2 sm:mb-3">
+                      <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-blue-400 transition">
+                        {exp.role}
+                      </h3>
+                      <span className="text-xs sm:text-sm text-blue-400">
+                        {exp.period}
+                      </span>
+                    </div>
+
+                    {/* Company */}
+                    <p className="text-xs sm:text-sm italic text-gray-400 mb-3 sm:mb-4">
+                      {exp.company}
+                    </p>
+
+                    {/* Divider */}
+                    <div className="h-px bg-white/10 mb-3 sm:mb-4"></div>
+
+                    {/* Points */}
+                    <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-300">
+                      {exp.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2 sm:gap-3">
+                          <span className="text-blue-500 mt-1 text-[10px] sm:text-xs">
+                            ●
+                          </span>
+                          <span className="leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <p className="text-sm italic text-gray-300 mb-4">
-                  {exp.company}
-                </p>
-                <ul className="list-disc list-inside space-y-2 text-sm text-gray-300">
-                  {exp.points.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
