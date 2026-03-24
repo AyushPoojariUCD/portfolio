@@ -1,9 +1,7 @@
 import React from "react";
-import OrbitBanner from "./OrbitBanner";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaLinkedin, FaGoogle, FaGithub } from "react-icons/fa";
-import { MdOutlineDesignServices } from "react-icons/md";
-import { BsTrophy } from "react-icons/bs";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
   return (
@@ -11,17 +9,19 @@ const Hero = () => {
       className="relative bg-gradient-to-br from-white to-gray-100 dark:from-[#000000] dark:to-[#0f0f0f] text-black dark:text-white py-20 px-6 overflow-hidden transition-colors duration-500"
       id="about"
     >
-      {/* Background blur */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-500 opacity-10 rounded-full blur-3xl z-0 animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-indigo-500 opacity-10 rounded-full blur-3xl z-0 animate-pulse"></div>
+      {/* Background Glow */}
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-500 opacity-10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-indigo-500 opacity-10 rounded-full blur-3xl animate-pulse"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-        {/* Left section */}
+        {/* LEFT CONTENT */}
         <div className="max-w-2xl">
+          {/* Availability */}
           <p className="text-sm uppercase tracking-wide text-blue-600 dark:text-blue-400 mb-2">
-            ● Available for Projects
+            ● Available for Opportunities
           </p>
 
+          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -30,98 +30,87 @@ const Hero = () => {
           >
             Building{" "}
             <span className="text-blue-600 dark:text-blue-400">
-              Modern Software Applications
+              Scalable Software
             </span>{" "}
-            <br className="hidden md:block" />
-            infused with{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              Artificial Intelligence
-            </span>
-            .
+            & Intelligent{" "}
+            <span className="text-blue-600 dark:text-blue-400">AI Systems</span>
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1 }}
-            className="text-sm md:text-base text-gray-700 dark:text-gray-400 max-w-lg mb-4"
+            className="text-sm md:text-base text-gray-700 dark:text-gray-400 max-w-lg mb-6"
           >
-            Hi, I’m Ayush Poojari — a full-stack developer blending software
-            engineering, AI, and DevOps to build intelligent, scalable, and
-            elegant systems.
+            Hi, I’m Ayush Poojari — a full-stack developer specializing in
+            AI-driven applications, scalable backend systems, and modern web
+            technologies.
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="mt-4"
+            className="flex flex-wrap gap-4"
           >
             <a
-              href="https://www.ucd.ie/"
+              href="https://drive.google.com/uc?export=download&id=1-UDv7SgvCvJmArESFxZqIcfz_o7Y0Kqd"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-semibold shadow-md transition"
             >
-              <span className="inline-block bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 border border-blue-300 dark:border-blue-700 px-4 py-2 rounded-full text-xs font-medium tracking-wider shadow-md hover:shadow-lg transition">
-                🎓 MSc in Computer Science @ University College Dublin
-              </span>
+              Download Resume
             </a>
-          </motion.div>
 
-          <div className="mt-6 flex flex-wrap gap-4">
-            <button
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="border border-blue-500 text-sm px-6 py-3 rounded-lg text-black dark:text-white hover:border-blue-600 transition"
-            >
-              Resume
-            </button>
             <button
               onClick={() =>
                 document
                   .getElementById("project-showcase")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="border border-blue-500 text-sm px-6 py-3 rounded-lg text-black dark:text-white hover:border-blue-600 transition"
+              className="border border-blue-500 px-6 py-3 rounded-lg text-sm hover:border-blue-600 transition"
             >
               View Projects
             </button>
-          </div>
+          </motion.div>
 
+          {/* Social Links */}
           <div className="mt-6 flex flex-wrap gap-3">
+            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/ayush-poojari/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 dark:bg-[#1d1d1d] hover:bg-blue-800 text-black dark:text-white text-xs py-2 px-4 rounded-lg flex items-center gap-2"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-blue-600 hover:text-white transition text-sm"
             >
               <FaLinkedin /> LinkedIn
             </a>
+
+            {/* GitHub */}
             <a
               href="https://github.com/AyushPoojariUCD"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-100 dark:bg-[#1d1d1d] hover:bg-gray-800 text-black dark:text-white text-xs py-2 px-4 rounded-lg flex items-center gap-2"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-gray-800 hover:text-white transition text-sm"
             >
               <FaGithub /> GitHub
             </a>
-            <button className="bg-gray-100 dark:bg-[#1d1d1d] hover:bg-yellow-600 text-black dark:text-white text-xs py-2 px-4 rounded-lg flex items-center gap-2">
-              <BsTrophy /> Hackathons
-            </button>
-            <button className="bg-gray-100 dark:bg-[#1d1d1d] hover:bg-blue-600 text-black dark:text-white text-xs py-2 px-4 rounded-lg flex items-center gap-2">
-              <FaGoogle /> Google Business
-            </button>
-            <button className="bg-gray-100 dark:bg-[#1d1d1d] hover:bg-red-700 text-black dark:text-white text-xs py-2 px-4 rounded-lg flex items-center gap-2">
-              <MdOutlineDesignServices /> Design Rush
-            </button>
+
+            {/* LeetCode */}
+            <a
+              href="https://leetcode.com/u/AyushPoojari/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-yellow-500 hover:text-black transition text-sm"
+            >
+              <SiLeetcode /> LeetCode
+            </a>
           </div>
         </div>
 
-        {/* Profile Image */}
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -131,22 +120,24 @@ const Hero = () => {
           <img
             src="/profile.gif"
             alt="Profile"
-            className="w-[320px] md:w-[400px] rounded-xl shadow-lg"
+            className="w-[260px] sm:w-[320px] md:w-[400px] rounded-xl shadow-lg"
           />
-          <div className="absolute bottom-4 right-4 bg-black bg-opacity-60 backdrop-blur-lg p-4 rounded-xl text-white text-sm flex items-center gap-3">
+
+          {/* Floating Card */}
+          <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-lg p-4 rounded-xl text-white text-xs sm:text-sm flex items-center gap-3 shadow-lg">
             <div>
               ⭐⭐⭐⭐⭐
               <br />
-              Experience of <strong>2 years as @SDE</strong>
+              <strong>2+ Years Experience as SDE</strong>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll Prompt */}
+      {/* Scroll Indicator */}
       <a href="#work">
-        <div className="relative z-10 text-center mt-16 text-gray-700 dark:text-gray-400 text-sm cursor-pointer">
-          <div className="inline-block border border-gray-400 dark:border-gray-600 rounded-full p-2 animate-bounce">
+        <div className="text-center mt-16 text-gray-600 dark:text-gray-400 text-sm">
+          <div className="inline-block border rounded-full p-2 animate-bounce">
             <div className="w-1 h-4 bg-gray-400 rounded-full mx-auto"></div>
           </div>
           <p className="mt-2">Scroll to explore</p>
