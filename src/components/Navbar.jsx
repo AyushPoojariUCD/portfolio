@@ -32,16 +32,16 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#project-showcase"
+            href="#project"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
             Project Showcase
           </a>
           <a
-            href="#contact"
+            href="#resume"
             className="hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
-            Contact
+            Resume
           </a>
         </nav>
 

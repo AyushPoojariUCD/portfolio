@@ -49,7 +49,10 @@ const Projects = () => {
   const current = tabs[active];
 
   return (
-    <section className="py-20 px-4 transition-colors duration-500 bg-white dark:bg-[#020617] text-black dark:text-white">
+    <section
+      className="py-20 px-4 transition-colors duration-500 bg-white dark:bg-[#020617] text-black dark:text-white"
+      id="project"
+    >
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
         <div className="text-center mb-12">

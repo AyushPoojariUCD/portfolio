@@ -4,7 +4,7 @@ import OrbitBanner from "./components/OrbitBanner";
 import WorkExperience from "./components/WorkExperience";
 import TechStack from "./components/TechStack";
 import Project from "./components/Projects";
-import DeliverSection from "./components/DeliverSection";
+import Resume from "./components/Resume";
 import Chatbot from "./components/Chatbot";
 import Footer from "./components/Footer";
 
@@ -16,7 +16,7 @@ function App() {
       <WorkExperience />
       <Project />
       <TechStack />
-      <DeliverSection />
+      <Resume />
       <Chatbot />
       <Footer />
     </div>
