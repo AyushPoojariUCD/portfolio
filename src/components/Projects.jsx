@@ -55,7 +55,7 @@ const Projects = () => {
   return (
     <section
       className="py-20 px-4 transition-colors duration-500 bg-white dark:bg-[#020617] text-black dark:text-white"
-      id="project"
+      id="projectshowcase"
     >
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}

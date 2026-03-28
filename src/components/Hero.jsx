@@ -90,7 +90,7 @@ const Hero = () => {
             </a>
 
             <button
-              onClick={() => smoothScroll("project-showcase")}
+              onClick={() => smoothScroll("projectshowcase")}
               className="border border-blue-500 px-6 py-3 rounded-lg text-sm hover:border-blue-600 transition"
             >
               View Projects

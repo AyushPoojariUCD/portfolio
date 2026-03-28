@@ -47,7 +47,10 @@ const experiences = [
 
 const WorkExperience = () => {
   return (
-    <section className="relative bg-gradient-to-b from-[#020617] to-[#0f172a] text-white py-20 px-6">
+    <section
+      className="relative bg-gradient-to-b from-[#020617] to-[#0f172a] text-white py-20 px-6"
+      id="work"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.h2

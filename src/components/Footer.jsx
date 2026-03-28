@@ -1,82 +1,120 @@
 import React from "react";
-import { FaLinkedin, FaCalendarAlt, FaAward, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0f0f0f] text-gray-300 py-16 px-6">
-      <div className="flex justify-center">
-        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-4 gap-10">
-          {/* Start a Project */}
-          <div>
-            <h3 className="text-xl font-bold mb-2 text-white">
-              Start a Project
-            </h3>
-            <p className="text-sm mb-4 text-gray-400">
-              Let’s create your next big idea.
-            </p>
-            <a
-              href="#contact"
-              className="inline-flex items-center bg-blue-500 text-white px-5 py-2 rounded-md hover:bg-blue-600 transition text-sm"
-            >
-              Get in Touch <FiArrowRight className="ml-2" />
-            </a>
-          </div>
+    <footer className="bg-black text-gray-300 px-6 py-16 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {/* Start a Project */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-2">
+            Start a Project
+          </h3>
+          <p className="text-sm text-gray-400 mb-4">
+            Let’s create your next big idea.
+          </p>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Services</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>Application Development</li>
-              <li>Web Development</li>
-              <li>SaaS Development</li>
-              <li>AI Integration</li>
-              <li>Automation & DevOps</li>
-            </ul>
-          </div>
+          <a
+            href="mailto:poojariayush01@gmail.com"
+            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium text-white overflow-hidden"
+          >
+            {/* Gradient Glow */}
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-90 group-hover:opacity-100 transition"></span>
 
-          {/* Empty Column for symmetry if 3 sections */}
-          <div></div>
+            {/* Shine Effect */}
+            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 blur-md transition"></span>
 
-          {/* Connect */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Connect</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2">
-                <FaLinkedin className="text-blue-400" />
-                <a
-                  href="https://www.linkedin.com/in/ayush-poojari/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+            {/* Content */}
+            <span className="relative z-10 flex items-center gap-2">
+              Get in Touch
+              <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+            </span>
+          </a>
+        </div>
+
+        {/* Services */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+          <ul className="space-y-2 text-sm">
+            {[
+              "Application Development",
+              "Web Development",
+              "SaaS Development",
+              "AI Integration",
+              "Automation & DevOps",
+            ].map((item) => (
+              <li
+                key={item}
+                className="relative w-fit text-gray-400 cursor-pointer transition group"
+              >
+                {item}
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Connect */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
+          <ul className="space-y-4 text-sm">
+            <li>
+              <a
+                href="mailto:poojariayush01@gmail.com"
+                className="group flex items-center gap-3 transition"
+              >
+                <FaEnvelope className="text-blue-400 transition-transform group-hover:scale-110 group-hover:rotate-6" />
+                <span className="relative">
+                  Email
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all group-hover:w-full"></span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ayush-poojari/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 transition"
+              >
+                <FaLinkedin className="text-blue-400 transition-transform group-hover:scale-110 group-hover:rotate-6" />
+                <span className="relative">
                   LinkedIn
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaGithub className="text-blue-400" />
-                <a
-                  href="https://github.com/AyushPoojariUCD/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all group-hover:w-full"></span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://github.com/AyushPoojariUCD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 transition"
+              >
+                <FaGithub className="text-blue-400 transition-transform group-hover:scale-110 group-hover:-rotate-6" />
+                <span className="relative">
                   GitHub
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaCalendarAlt className="text-green-400" />
-                <a href="#contact">Schedule a Call</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <FaAward className="text-yellow-500" />
-                <a href="#awards">Awards & Achievements</a>
-              </li>
-            </ul>
-          </div>
+                  <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-400 transition-all group-hover:w-full"></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Branding */}
+        <div>
+          <h3 className="text-xl font-bold text-white mb-2">Ayush Poojari</h3>
+          <p className="text-sm text-gray-400">
+            Software Developer • Cloud • AI
+          </p>
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="text-center text-gray-500 text-xs mt-12 border-t border-gray-700 pt-6">
+      {/* Bottom */}
+      <div className="mt-12 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Ayush Poojari. All rights reserved.
       </div>
     </footer>
