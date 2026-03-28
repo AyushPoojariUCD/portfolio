@@ -4,6 +4,34 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 const Hero = () => {
+  // 🔥 Custom smooth scroll (slow + premium)
+  const smoothScroll = (targetId) => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const start = window.scrollY;
+    const end = target.offsetTop;
+    const duration = 4000; // ⏱️ increase = slower scroll
+    let startTime = null;
+
+    const easeInOut = (t) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    const animateScroll = (time) => {
+      if (!startTime) startTime = time;
+      const progress = time - startTime;
+      const percent = Math.min(progress / duration, 1);
+
+      window.scrollTo(0, start + (end - start) * easeInOut(percent));
+
+      if (progress < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
   return (
     <section
       className="relative bg-gradient-to-br from-white to-gray-100 dark:from-[#000000] dark:to-[#0f0f0f] text-black dark:text-white py-20 px-6 overflow-hidden transition-colors duration-500"
@@ -16,12 +44,10 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* LEFT CONTENT */}
         <div className="max-w-2xl">
-          {/* Availability */}
           <p className="text-sm uppercase tracking-wide text-blue-600 dark:text-blue-400 mb-2">
             ● Available for Opportunities
           </p>
 
-          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,7 +62,6 @@ const Hero = () => {
             <span className="text-blue-600 dark:text-blue-400">AI Systems</span>
           </motion.h1>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -48,7 +73,7 @@ const Hero = () => {
             technologies.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,20 +90,15 @@ const Hero = () => {
             </a>
 
             <button
-              onClick={() =>
-                document
-                  .getElementById("project-showcase")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => smoothScroll("project-showcase")}
               className="border border-blue-500 px-6 py-3 rounded-lg text-sm hover:border-blue-600 transition"
             >
               View Projects
             </button>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social */}
           <div className="mt-6 flex flex-wrap gap-3">
-            {/* LinkedIn */}
             <a
               href="https://www.linkedin.com/in/ayush-poojari/"
               target="_blank"
@@ -88,7 +108,6 @@ const Hero = () => {
               <FaLinkedin /> LinkedIn
             </a>
 
-            {/* GitHub */}
             <a
               href="https://github.com/AyushPoojariUCD"
               target="_blank"
@@ -98,7 +117,6 @@ const Hero = () => {
               <FaGithub /> GitHub
             </a>
 
-            {/* LeetCode */}
             <a
               href="https://leetcode.com/u/AyushPoojari/"
               target="_blank"
@@ -115,34 +133,44 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
-          className="relative"
+          whileHover={{ rotateY: 8, rotateX: 4 }}
+          className="relative perspective-1000"
         >
-          <img
-            src="/profile.gif"
-            alt="Profile"
-            className="w-[260px] sm:w-[320px] md:w-[400px] rounded-xl shadow-lg"
-          />
+          <div className="p-[2px] rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+            <div className="relative overflow-hidden rounded-xl group bg-black">
+              <img
+                src="/profile.gif"
+                alt="Profile"
+                className="w-[260px] sm:w-[320px] md:w-[400px] rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105"
+              />
+
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="glare-effect"></div>
+              </div>
+            </div>
+          </div>
 
           {/* Floating Card */}
           <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-lg p-4 rounded-xl text-white text-xs sm:text-sm flex items-center gap-3 shadow-lg">
             <div>
-              ⭐⭐⭐⭐⭐
+              <strong>Software Engineer</strong>
               <br />
-              <strong>2+ Years Experience as SDE</strong>
+              Full Stack • AI • Cloud
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <a href="#work">
-        <div className="text-center mt-16 text-gray-600 dark:text-gray-400 text-sm">
-          <div className="inline-block border rounded-full p-2 animate-bounce">
-            <div className="w-1 h-4 bg-gray-400 rounded-full mx-auto"></div>
-          </div>
-          <p className="mt-2">Scroll to explore</p>
+      {/* 🔥 Scroll Indicator (fixed) */}
+      <div
+        onClick={() => smoothScroll("resume")}
+        className="cursor-pointer text-center mt-16 text-gray-600 dark:text-gray-400 text-sm"
+      >
+        <div className="inline-block border rounded-full p-2 animate-bounce">
+          <div className="w-1 h-4 bg-gray-400 rounded-full mx-auto"></div>
         </div>
-      </a>
+        <p className="mt-2">Scroll to explore</p>
+      </div>
     </section>
   );
 };
