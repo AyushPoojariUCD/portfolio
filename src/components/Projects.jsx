@@ -14,7 +14,7 @@ const tabs = [
     name: "HR Sync Platform",
     icon: "lucide:terminal-square",
     color: "#F5A31E",
-    title: "Solve 400+ Problems in our In-house Environment",
+    title: "Real-Time HR Data Synchronization Platform",
     desc: "A distributed microservices-based HR platform designed for efficient employee data synchronization across organizations. Built with Flask (API Gateway), MongoDB (data store), Kafka (event streaming), and Elasticsearch (analytics), it enables real-time data flow and flexible queries. The system is containerized with Docker and deployed on Kubernetes with Horizontal Pod Autoscalers for resilience. Includes logging, monitoring, and CI/CD support for scalable HR integration.",
     image: "/projects/project-2.png",
   },
@@ -22,7 +22,7 @@ const tabs = [
     name: "Traffic Sign Classification",
     icon: "lucide:trending-up",
     color: "#D00180",
-    title: "Track your progress with real-time insights",
+    title: "Track real-time traffic sign classification",
     desc: "Developed a CNN-based deep learning model to classify German traffic signs using the GTSRB dataset. The pipeline includes image preprocessing, data augmentation, and model training using Keras/TensorFlow. Achieved high accuracy in recognizing over 40 classes of signs in real-time scenarios. Deployed model for inference and performance evaluation. Useful in autonomous driving systems and intelligent transport solutions.",
     image: "/projects/project-3.png",
   },
@@ -33,14 +33,18 @@ const tabs = [
     title: "Interactive live coding editor",
     desc: "A cloud-based collaborative code editor inspired by Replit. Write, run, and share code in multiple languages directly from your browser with real-time collaboration, syntax highlighting and copying code snippet.",
     image: "/projects/project-4.png",
+    demo: "https://codesphere-online-ide.vercel.app/",
   },
   {
-    name: "Webinars",
+    name: "Pathfinding Visualizer",
     icon: "lucide:tv",
     color: "#22AEFF",
-    title: "Industry-led webinars & career guidance",
-    desc: "Learn from experts about projects, resumes, and real-world practices.",
+    title: "Interactive Algorithm Visualizer",
+    desc: "An interactive pathfinding algorithm visualizer built with React, NextJS, and Node.js. Explore how popular algorithms like A* (A-Star), Dijkstra, BFS, and DFS work step-by-step in real-time on a customizable grid.",
     image: "/projects/project-1.png",
+    github:
+      "https://github.com/AyushPoojariUCD/pathfinding-algorithm-visualizer",
+    demo: "https://pathfinding-algorithm-visualizer-rx.vercel.app/",
   },
 ];
 
@@ -108,9 +112,35 @@ const Projects = () => {
               {current.title}
             </h4>
 
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
               {current.desc}
             </p>
+
+            {/* 🔥 SINGLE BUTTON */}
+            <a
+              href={current.demo || current.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold 
+  bg-gradient-to-r from-blue-500 to-indigo-600 text-white 
+  shadow-lg overflow-hidden group transition-all duration-300 
+  hover:scale-105 hover:shadow-blue-500/30"
+            >
+              {/* ✨ Shine effect */}
+              <span className="absolute inset-0 overflow-hidden rounded-xl">
+                <span className="shine"></span>
+              </span>
+
+              {/* Text */}
+              <span className="relative z-10 flex items-center gap-2">
+                {current.demo ? "Live Demo" : "View Code"}
+
+                {/* Arrow animation */}
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </a>
           </div>
 
           {/* RIGHT */}
@@ -121,7 +151,7 @@ const Projects = () => {
               className="rounded-xl shadow-xl w-full object-cover"
             />
 
-            {/* Glow Effect */}
+            {/* Glow */}
             <div
               className="absolute bottom-0 right-0 w-40 h-40 blur-[120px] rounded-full opacity-40"
               style={{ background: current.color }}
