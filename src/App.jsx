@@ -1,6 +1,5 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import OrbitBanner from "./components/OrbitBanner";
 import WorkExperience from "./components/WorkExperience";
 import TechStack from "./components/TechStack";
 import Project from "./components/Projects";

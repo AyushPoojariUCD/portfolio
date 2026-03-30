@@ -13,13 +13,6 @@ const Resume = () => {
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-500/20 blur-3xl rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
 
-      {/* Ribbon */}
-      <div className="absolute top-5 left-[-40px] z-20">
-        <span className="block bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm sm:text-base font-semibold py-2 shadow-xl transform -rotate-45 text-center w-[150px] sm:w-[180px] tracking-wide">
-          Resume
-        </span>
-      </div>
-
       {/* Content Card */}
       <div className="relative max-w-2xl w-full flex flex-col items-center gap-6 sm:gap-8 bg-white/60 dark:bg-white/5 backdrop-blur-xl p-6 sm:p-10 rounded-2xl shadow-xl border border-white/20">
         {/* Heading */}
