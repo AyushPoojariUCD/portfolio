@@ -51,11 +51,14 @@ const Hero = () => {
             className="text-4xl md:text-6xl font-extrabold leading-tight mb-4"
           >
             Building{" "}
-            <span className="text-blue-600 dark:text-blue-400">
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
               Scalable Software
             </span>{" "}
-            & Intelligent{" "}
-            <span className="text-blue-600 dark:text-blue-400">AI Systems</span>
+            with{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+              AI & DevOps
+            </span>{" "}
+            at the Core
           </motion.h1>
 
           <motion.p
