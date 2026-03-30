@@ -44,10 +44,6 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* LEFT CONTENT */}
         <div className="max-w-2xl">
-          <p className="text-sm uppercase tracking-wide text-blue-600 dark:text-blue-400 mb-2">
-            ● Available for Opportunities
-          </p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +99,18 @@ const Hero = () => {
               href="https://www.linkedin.com/in/ayush-poojari/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-blue-600 hover:text-white transition text-sm"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg 
+    bg-gray-100 dark:bg-[#1d1d1d] 
+    border border-gray-300 dark:border-[#2a2a2a]
+
+    hover:bg-blue-600 hover:text-white 
+    hover:border-blue-600
+
+    dark:hover:bg-blue-500/20 dark:hover:border-blue-500
+    dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]
+
+    transform hover:-translate-y-1 hover:scale-[1.03]
+    transition-all duration-300 text-sm"
             >
               <FaLinkedin /> LinkedIn
             </a>
@@ -112,7 +119,18 @@ const Hero = () => {
               href="https://github.com/AyushPoojariUCD"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-gray-800 hover:text-white transition text-sm"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg 
+    bg-gray-100 dark:bg-[#1d1d1d] 
+    border border-gray-300 dark:border-[#2a2a2a]
+
+    hover:bg-gray-800 hover:text-white 
+    hover:border-gray-800
+
+    dark:hover:bg-white/10 dark:hover:border-gray-400
+    dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)]
+
+    transform hover:-translate-y-1 hover:scale-[1.03]
+    transition-all duration-300 text-sm"
             >
               <FaGithub /> GitHub
             </a>
@@ -121,7 +139,18 @@ const Hero = () => {
               href="https://leetcode.com/u/AyushPoojari/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100 dark:bg-[#1d1d1d] hover:bg-yellow-500 hover:text-black transition text-sm"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg 
+    bg-gray-100 dark:bg-[#1d1d1d] 
+    border border-gray-300 dark:border-[#2a2a2a]
+
+    hover:bg-yellow-500 hover:text-black 
+    hover:border-yellow-500
+
+    dark:hover:bg-yellow-400/20 dark:hover:border-yellow-400
+    dark:hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]
+
+    transform hover:-translate-y-1 hover:scale-[1.03]
+    transition-all duration-300 text-sm"
             >
               <SiLeetcode /> LeetCode
             </a>
